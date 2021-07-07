@@ -25,7 +25,7 @@ async def edit(ctx):
 @bot.command()
 async def game(ctx):
     message = await ctx.send('test')
-    await message.add_reaction('🚗')
+    await message.add_reaction('❓')
 # эвенты--------------------------------------------------------------
 @bot.event
 async def on_ready():
@@ -43,12 +43,16 @@ async def on_reaction_add(reaction, user):
     emoji = reaction.emoji
     message = reaction.message.content
     usr = user.id
-    channel = reaction.message.channel
-    message_data = reaction.message
     if usr != 859114111940952105:
         if message == 'edit':
             if emoji == '🔪':
                 await reaction.message.edit(content='ha!')
+        if message == 'test':
+            if emoji == '❓':
+                await reaction.message.channel.send('''
+ПОМОЩЬ
+❓ - Показывает это сообщение
+                ''')
 
 
 @bot.event
