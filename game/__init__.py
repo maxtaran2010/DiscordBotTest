@@ -1,5 +1,7 @@
 import game
-def key2(inpt):
+
+
+def keys(inpt):
     for_key = ''
     if inpt == '⬆':
         for_key = 'w'

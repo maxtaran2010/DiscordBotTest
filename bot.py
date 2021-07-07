@@ -1,3 +1,4 @@
+import game
 import discord
 from discord.ext import commands
 from config.botData import settings
@@ -26,6 +27,10 @@ async def edit(ctx):
 async def game(ctx):
     message = await ctx.send('test')
     await message.add_reaction('❓')
+    await message.add_reaction('⬆')
+    await message.add_reaction('⬇')
+    await message.add_reaction('➡')
+    await message.add_reaction('⬅')
 # эвенты--------------------------------------------------------------
 @bot.event
 async def on_ready():
